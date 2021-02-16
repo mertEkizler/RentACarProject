@@ -19,7 +19,7 @@ namespace Core.DataAccess.EntityFramework
                 var addedBrand = context.Entry(entity);
                 addedBrand.State = EntityState.Added;
                 context.SaveChanges();
-            }
+            } 
         }
 
         public void Delete(TEntity entity)
