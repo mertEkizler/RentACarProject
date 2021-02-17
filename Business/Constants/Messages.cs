@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -35,10 +36,7 @@ namespace Business.Constants
         public static string UpdatedRental = "Araba Kiralama işlemi güncellendi.";
         public static string FailedRentalAddOrUpdate = "Bu araba henüz teslim edilmediği için kiralayamazsınız.";
         public static string ReturnedRental = "Kiraladığınız araç teslim edildi.";
-
-
-
-
-
+        public static string MaintenanceTime = "Sistem bakımda.";
+        public static string ProductsListed = "Araçlar listelendi.";
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Concrete.EntityFramework.Repository;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,19 +11,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsController : ControllerBase
+    public class CustomersController : ControllerBase
     {
-        ICarService _carService;
+        ICustomerService _customerService;
 
-        public CarsController(ICarService carService)
+        public CustomersController(ICustomerService customerService)
         {
-            _carService = carService;
+            _customerService = customerService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _carService.GetAll();
+            var result = _customerService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -36,7 +34,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _carService.GetById(id);
+            var result = _customerService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -45,9 +43,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Car car)
+        public IActionResult Add(Customer customer)
         {
-            var result = _carService.Add(car);
+            var result = _customerService.Add(customer);
             if (result.Success)
             {
                 return Ok(result);
@@ -56,20 +54,20 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Car car)
+        public IActionResult Update(Customer customer)
         {
-            var result = _carService.Update(car);
+            var result = _customerService.Update(customer);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
             return BadRequest(result);
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Car car)
+        public IActionResult Delete(Customer customer)
         {
-            var result = _carService.Delete(car);
+            var result = _customerService.Delete(customer);
             if (result.Success)
             {
                 return Ok(result);

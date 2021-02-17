@@ -21,37 +21,37 @@ namespace Console_UI
         //    CarManager carManager = new CarManager(new InMemoryCarDal());
         //    foreach (var item4 in carManager.GetById(3))
         //    {
-        //        Console.WriteLine(item4.CarName);
+        //        Console.WriteLine(item4.Name);
         //    }
         //}
 
         //private static void Update()
         //{
         //    CarManager carManager = new CarManager(new InMemoryCarDal());
-        //    carManager.Update(new Car { CarName = "Doğan", BrandId = 2, CarId = 1, ColorId = 2, DailyPrice = 40, Description = "benzin", ModelYear = 1992 });
+        //    carManager.Update(new Car { Name = "Doğan", BrandId = 2, Id = 1, ColorId = 2, DailyPrice = 40, Description = "benzin", ModelYear = 1992 });
         //    foreach (var item3 in carManager.GetAll())
         //    {
-        //        Console.WriteLine(item3.CarId + " " + item3.CarName + " " + item3.BrandId + " " + item3.ColorId + " " + item3.DailyPrice + " " + item3.Description + " " + item3.ModelYear);
+        //        Console.WriteLine(item3.Id + " " + item3.Name + " " + item3.BrandId + " " + item3.ColorId + " " + item3.DailyPrice + " " + item3.Description + " " + item3.ModelYear);
         //    }
         //}
 
         //private static void Delete()
         //{
         //    CarManager carManager = new CarManager(new InMemoryCarDal());
-        //    carManager.Delete(new Car { CarId = 3 });
+        //    carManager.Delete(new Car { Id = 3 });
         //    foreach (var item2 in carManager.GetAll())
         //    {
-        //        Console.WriteLine(item2.CarName);
+        //        Console.WriteLine(item2.Name);
         //    }
         //}
 
         //private static void Add()
         //{
         //    CarManager carManager = new CarManager(new InMemoryCarDal());
-        //    carManager.Add(new Car { CarName = "Şahin", BrandId = 2, CarId = 3, ColorId = 4, DailyPrice = 30, Description = "tüplü", ModelYear = 1993 });
+        //    carManager.Add(new Car { Name = "Şahin", BrandId = 2, Id = 3, ColorId = 4, DailyPrice = 30, Description = "tüplü", ModelYear = 1993 });
         //    foreach (var item in carManager.GetAll())
         //    {
-        //        Console.WriteLine(item.CarName);
+        //        Console.WriteLine(item.Name);
         //    }
         //}
 
@@ -60,7 +60,7 @@ namespace Console_UI
         //    CarManager carManager = new CarManager(new InMemoryCarDal());
         //    foreach (var cars in carManager.GetAll())
         //    {
-        //        Console.WriteLine(cars.CarId + " " + cars.CarName + " " + cars.BrandId + " " + cars.ColorId + " " + cars.DailyPrice + " " + cars.Description + " " + cars.ModelYear);
+        //        Console.WriteLine(cars.Id + " " + cars.Name + " " + cars.BrandId + " " + cars.ColorId + " " + cars.DailyPrice + " " + cars.Description + " " + cars.ModelYear);
         //    }
         //}
     }

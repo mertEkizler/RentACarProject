@@ -20,14 +20,14 @@ namespace DataAccess.Concrete.EntityFramework.Repository
             {
                 var result = from c in filter == null ? context.Cars : context.Cars.Where(filter)
                              join co in context.Colors
-                             on c.ColorId equals co.ColorId
+                             on c.ColorId equals co.Id
                              join b in context.Brands
-                             on c.BrandId equals b.BrandId
+                             on c.BrandId equals b.Id
                              select new CarDetailDto
                              {
-                                 CarId = c.CarId,
-                                 BrandName = b.BrandName,
-                                 ColorName = co.ColorName,
+                                 Id = c.Id,
+                                 BrandName = b.Name,
+                                 ColorName = co.Name,
                                  DailyPrice = c.DailyPrice,
                                  Descriptions = c.Description,
                                  ModelYear = c.ModelYear
