@@ -38,5 +38,7 @@ namespace Business.Constants
         public static string ReturnedRental = "Kiraladığınız araç teslim edildi.";
         public static string MaintenanceTime = "Sistem bakımda.";
         public static string ProductsListed = "Araçlar listelendi.";
+        public static string CarCountOfColorError="En fazla 100 renk türü eklenebilir";
+        public static string CarNameAlreadyExists="Böyle bir araba ismi mevcut";
     }
 }
