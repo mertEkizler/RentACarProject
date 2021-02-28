@@ -78,3 +78,4 @@ namespace WebAPI.Controllers
         }
     }
 }
+//SERVİS YAZILACAK CARIMAGE
