@@ -40,5 +40,6 @@ namespace Business.Constants
         public static string ProductsListed = "Araçlar listelendi.";
         public static string CarCountOfColorError="En fazla 100 renk türü eklenebilir";
         public static string CarNameAlreadyExists="Böyle bir araba ismi mevcut";
+        public static string FailedCarImageLimit="En fazla 5 görsel ekleyebilirsiniz.";
     }
 }
