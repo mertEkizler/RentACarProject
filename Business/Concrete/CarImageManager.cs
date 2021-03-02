@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -63,6 +64,11 @@ namespace Business.Concrete
             return new SuccessDataResult<CarImage>(_carImageDal.Get(ci => ci.Id == id));
         }
 
+        public IDataResult<List<CarImage>> GetImagesByCarId(int carImageId)
+        {
+            return new SuccessDataResult<List<CarImage>>(CheckIfCarHaveNoImage(carImageId));
+        }
+
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(IFormFile file, CarImage carImage)
         {
@@ -82,5 +88,17 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+        private List<CarImage> CheckIfCarHaveNoImage(int id)
+        {
+            string path = Directory.GetCurrentDirectory() + @"\wwwroot\Images\default.jpg";
+            var result = _carImageDal.GetAll(c => c.CarId == id);
+            if (!result.Any())
+            {
+                return new List<CarImage> { new CarImage { CarId = id, ImagePath = path } };
+            }
+            return result;
+        }
+        
     }
 }
