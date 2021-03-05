@@ -2,6 +2,8 @@
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Helpers;
@@ -29,6 +31,7 @@ namespace Business.Concrete
 
         [SecuredOperation("carimage.add,admin")]
         [ValidationAspect(typeof(CarImageValidator))]
+        [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Add(IFormFile file, CarImage carImage)
         {
             var result = BusinessRules.Run(CheckCarImageCount(carImage));
@@ -56,16 +59,22 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<List<CarImage>> GetAll(Expression<Func<CarImage, bool>> filter = null)
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(filter));
         }
 
+        [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<CarImage> GetById(int id)
         {
             return new SuccessDataResult<CarImage>(_carImageDal.Get(ci => ci.Id == id));
         }
 
+        [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<List<CarImage>> GetImagesByCarId(int carImageId)
         {
             return new SuccessDataResult<List<CarImage>>(CheckIfCarHaveNoImage(carImageId));
