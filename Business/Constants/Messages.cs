@@ -9,6 +9,8 @@ namespace Business.Constants
 {
     public static class Messages
     {
+        public static string  CarGetBrandId="markaya göre getirildi";
+        public static string  CarGetColorId="renge göre getirildi";
         public static string AddedBrand = "Marka başarıyla eklendi.";
         public static string DeletedBrand = "Marka başarıyla silindi.";
         public static string UpdatedBrand = "Marka başarıyla güncellendi.";
