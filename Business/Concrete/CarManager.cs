@@ -35,7 +35,7 @@ namespace Business.Concrete
         public IResult Add(Car car)
         {
             IResult result = BusinessRules.Run(CheckIfCarCountOfColorCorrect(car.ColorId),
-                CheckIfCarNameExists(car.Name));
+                CheckIfCarNameExists(car.CarName));
 
             if (result != null)
             {
@@ -94,7 +94,7 @@ namespace Business.Concrete
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Update(Car car)
         {
-            IResult result = BusinessRules.Run(CheckIfCarNameExists(car.Name));
+            IResult result = BusinessRules.Run(CheckIfCarNameExists(car.CarName));
             if (result!=null)
             {
                 return result;
@@ -116,7 +116,7 @@ namespace Business.Concrete
 
         private IResult CheckIfCarNameExists(string carName)
         {
-            var result = _carDal.GetAll(c => c.Name == carName).Any();
+            var result = _carDal.GetAll(c => c.CarName == carName).Any();
             if (result)
             {
                 return new ErrorResult(Messages.CarNameAlreadyExists);

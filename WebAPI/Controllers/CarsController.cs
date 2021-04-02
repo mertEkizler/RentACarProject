@@ -101,6 +101,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
     }
 }
 //SERVİS YAZILACAK CARIMAGE
