@@ -40,17 +40,17 @@ namespace Business.Constants
         public static string UpdatedRental = "Araba Kiralama işlemi güncellendi.";
         public static string FailedRentalAddOrUpdate = "Bu araba henüz teslim edilmediği için kiralayamazsınız.";
         public static string ReturnedRental = "Kiraladığınız araç teslim edildi.";
-        public static string MaintenanceTime = "Sistem bakımda.";
+        public static string MaintenanceTime = "The system is under maintenance.";
         public static string ProductsListed = "Araçlar listelendi.";
         public static string CarCountOfColorError="En fazla 100 renk türü eklenebilir";
         public static string CarNameAlreadyExists="Böyle bir araba ismi mevcut";
         public static string FailedCarImageLimit="En fazla 5 görsel ekleyebilirsiniz.";
-        public static string AuthorizationDenied="Yetkiniz yok";
-        public static string UserRegistered="Kayıt oldu";
-        public static string UserNotFound="Kullanıcı bulunamadı";
-        public static string PasswordError="Parola hatası";
-        public static string SuccessfulLogin="Başarılı giriş";
-        public static string UserAlreadyExists="Kullanıcı mevcut";
-        public static string AccessTokenCreated="Token oluşturuldu";
+        public static string AuthorizationDenied= "You are not authorized";
+        public static string UserRegistered= "Registered";
+        public static string UserNotFound= "User not found";
+        public static string PasswordError= "Password error";
+        public static string SuccessfulLogin= "Successful login";
+        public static string UserAlreadyExists= "User available";
+        public static string AccessTokenCreated= "Login successful";
     }
 }
